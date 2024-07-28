@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор расчета кредитов</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/normalize.css">
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+  <div id="root" class="wrapper">
+    <header class="header">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        viewBox="0 0 16 16"
+        class="header__icon"
+      >
+        <path d="M12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+        <path d="M4 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
+      </svg>
+      <h1 class="header__title">Калькулятор расчета кредитов</h1>
+    </header>
+    <main class="main">
+      <div class="container">
+        <div class="main__calculator">
+          <form novalidate class="form">
+            <div class="field">
+              <label for="amount-input" class="field__label">Сумма кредита (руб.)</label>
+              <input
+                type="text"
+                placeholder="Введите сумму кредита"
+                name="amount"
+                autocomplete="off"
+                required
+                id="amount-input"
+                class="field__control"
+              />
+            </div>
+            <div class="field">
+              <label for="duration-input" class="field__label">Срок кредита (мес.)</label>
+              <input
+                type="text"
+                placeholder="Введите срок кредита"
+                name="duration"
+                autocomplete="off"
+                required
+                id="duration-input"
+                class="field__control"
+              />
+            </div>
+            <div class="field">
+              <label for="rate-input" class="field__label">Годовая процентная ставка</label>
+              <input
+                type="text"
+                placeholder="Введите процентную ставку"
+                name="rate"
+                autocomplete="off"
+                required
+                id="rate-input"
+                class="field__control"
+              />
+            </div>
+            <div class="form__bottom">
+              <div class="checkbox form__checkbox">
+                <label for="checkbox-input" id="checkbox-label" class="checkbox__label">
+                  Выполнять расчет автоматически 
+                  <input type="checkbox" id="checkbox-input" class="checkbox__control">
+                </label>
+              </div>
+              <div class="form__buttons">
+                <button type="submit" id="calculate-button" class="form__button">Рассчитать</button>
+                <button type="reset" id="reset-button" class="form__button">Сброс</button>
+              </div>
+            </div>
+          </form>
+          <ul class="main__result-list">
+            <li class="main__result-item">
+              <p class="main__result-item-description">Ежемесячный платеж</p>
+              <span id="monthly-payment" class="main__result-item-value"></span>
+            </li>
+            <li class="main__result-item">
+              <p class="main__result-item-description">Общая сумма выплат</p>
+              <span id="total-amount" class="main__result-item-value"></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="./dist/index.js"></script>
+</body>
+</html>

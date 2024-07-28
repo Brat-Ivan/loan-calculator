@@ -1,0 +1,215 @@
+:root {
+  --color-main: #7288ff;
+  --color-accent-1: #d7ddff;
+  --color-bg: #f5f9ff;
+  --color-white: #fff;
+  --color-error: #f00;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1 {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  border: none;
+  font: inherit;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--color-main);
+  background-color: var(--color-bg);
+}
+
+.container {
+  max-width: 60%;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  padding: 20px;
+}
+
+.header__icon {
+  width: 48px;
+  height: 48px;
+  color: var(--color-main);
+}
+
+.header__title {
+  font-size: 3em;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.main {
+  padding: 60px 0 0;
+}
+
+.main__calculator {
+  border: 1px solid var(--color-accent-1);
+  background-color: var(--color-white);
+  padding: 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  row-gap: 20px;
+}
+
+.field {
+  display: flex;
+  column-gap: 50px;
+  align-items: center;
+  width: 100%;
+}
+
+.field__label {
+  width: 50%;
+  font-size: 1.5em;
+  font-weight: 500;
+  text-align: right;
+  color: var(--color-main);
+}
+
+.field__control {
+  width: 50%;
+  border: 2px solid var(--color-accent-1);
+  font-size: 2em;
+  font-weight: 500;
+  letter-spacing: -1px;
+  color: var(--color-main);
+  padding: 15px;
+}
+
+.field__control::placeholder {
+  color: var(--color-accent-1);
+}
+
+.field__control:focus {
+  border-color: var(--color-main);
+  outline: 0;
+}
+
+.field__control--error,
+.field__control--error:focus {
+  border-color: var(--color-error);
+}
+
+.form__bottom {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+  width: 100%;
+  margin: 20px 0 60px;
+}
+
+.form__buttons {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 30px;
+  width: 50%;
+}
+
+.form__button {
+  width: 50%;
+  border-radius: 8px;
+  font-size: 2em;
+  font-weight: 500;
+  background-color: var(--color-main);
+  color: var(--color-white);
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: opacity 0.1s;
+  user-select: none;
+}
+
+.form__button:hover {
+  opacity: 0.9;
+}
+
+.form__button:active {
+  opacity: 0.7;
+}
+
+.form__button--disabled,
+.form__button--disabled:hover,
+.form__button--disabled:active {
+  opacity: 0.5;
+}
+
+.form__checkbox {
+  width: 50%;
+}
+
+.checkbox__label {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.checkbox__control {
+  width: 30px;
+  height: 30px;
+  accent-color: var(--color-main);
+  cursor: pointer;
+}
+
+.main__result-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.main__result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 50px;
+  width: 100%;
+}
+
+.main__result-item-description {
+  width: 50%;
+  font-size: 2em;
+  text-align: right;
+}
+
+.main__result-item-value {
+  width: 50%;
+  font-size: 2.5em;
+  font-weight: 500;
+}
