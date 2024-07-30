@@ -31,7 +31,7 @@ function calc(): void {
 
   if (!isValid) return;
   
-  const monthlyPayment: number = (amoutInputValue * rateInputValue / 100 / 12) / (1 - (1 + rateInputValue / 100 / 12)**(-durationInputValue));
+  const monthlyPayment: number = (amoutInputValue * rateInputValue / 100 / 12) / (1 - (1 + rateInputValue / 100 / 12) ** (-durationInputValue));
   const totalAmount: number = monthlyPayment * durationInputValue;
   
   if (monthlyPayment && totalAmount) {
@@ -67,7 +67,7 @@ function calcAutomatically(): void {
 }
 
 checkboxInput.addEventListener('change', () => {
-  calculateBtn.disabled = (checkboxInput.checked) ? true : false;
+  calculateBtn.disabled = checkboxInput.checked ? true : false;
   calculateBtn.classList.toggle('form__button--disabled');
   calcAutomatically();
 });
